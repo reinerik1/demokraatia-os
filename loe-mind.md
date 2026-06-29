@@ -1,6 +1,6 @@
 # Kuidas prototüüpi kasutada
 
-See on esimene lihtne näidis, mitte veel päris AI-süsteem.
+See on v0.2 näidis kollektiivsest otsustusmehhanismist. Praegu ei kasuta see veel päris AI-d, aga näitab, kuidas sisendist võiks tekkida struktureeritud otsusekaart.
 
 ## Avamine
 
@@ -9,7 +9,8 @@ Ava fail `index.html` brauseris.
 ## Mida saab proovida
 
 - kirjuta vasakul kasti mõni poliitiline ettepanek
-- vali valdkond
+- vali üks näidisteema: koolivõrk ja haridus või ettevõtluse arendus
+- muuda ettepanekut enda sõnadega
 - vali mõju suurus
 - märgi väärtusfiltrid
 - vajuta nuppu “Koosta otsusekaart”
@@ -20,6 +21,10 @@ Paremal tekib otsusekaart:
 - pooltargumendid
 - vastuargumendid
 - riskid
+- vajalikud andmed
+- mõjutatud osapooled
+- otsuse mõistlikkuse tingimused
+- kohad, kus inimene peab sekkuma
 - mõju kohe, 5 aasta ja 20 aasta vaates
 - läbipaistvuse kontroll
 
@@ -28,4 +33,3 @@ Paremal tekib otsusekaart:
 Praegune versioon kasutab ette kirjutatud näidismustreid. See tähendab, et ta ei mõtle veel päriselt nagu AI. Selle eesmärk on näidata ideed ja kasutajakogemust.
 
 Järgmine tehniline samm oleks ühendada see päris AI-ga, et süsteem koostaks otsusekaardi vabateksti põhjal.
-

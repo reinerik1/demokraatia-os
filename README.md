@@ -1,22 +1,25 @@
 # Demokraatia operatsioonisüsteem
 
-Demokraatia operatsioonisüsteem on esimene prototüüp ideest, kus avalik otsustusprotsess aitab ühiskondlikke ja poliitilisi valikuid läbipaistvamalt analüüsida.
+Demokraatia operatsioonisüsteem on prototüüp kollektiivsest otsustusmehhanismist, kus inimeste sisend, avalikud andmed ja AI-põhine struktureerimine aitavad ühiskondlikke valikuid paremini läbi mõelda.
 
-See ei ole “AI poliitik” ega süsteem, mis otsustab inimeste eest. Eesmärk on näidata, kuidas kodaniku ettepanekust võiks tekkida arusaadav otsusekaart:
+Eesmärk on vähendada poliitikas ego, omakasu, juhuslikku survet ja loosungipõhist mõtlemist. Prototüüp näitab, kuidas kodaniku ettepanekust võiks tekkida arusaadav otsusekaart:
 
 - probleemi tuum
 - poolt- ja vastuargumendid
 - riskid
+- vajalikud andmed
+- mõjutatud osapooled
+- tingimused, mille korral otsus oleks mõistlik
 - mõju kohe, 5 aasta ja 20 aasta vaates
 - läbipaistvuse kontroll
 
-AI roll selles idees ei ole võimu omamine, vaid müra vähendamine ja mõtlemise nähtavaks tegemine.
+AI roll on aidata suurt hulka sisendit, argumente ja andmeid korrastada. Inimkomponent ei kao ära, aga tema ego ja omakasu mõju peab muutuma nähtavaks ning kontrollitavaks.
 
 ## Miks see olemas on
 
 Tavaline poliitiline arutelu jääb tihti loosungite, emotsioonide ja lühiajalise võidu lõksu. See prototüüp katsetab teistsugust lähenemist:
 
-> Ärge usaldage inimese ego. Usaldage läbipaistvat protsessi.
+> Inimesed annavad sisendi. AI aitab seda struktureerida. Otsustusloogika jääb avalikuks.
 
 Süsteemi eesmärk on aidata enne otsust nähtavaks teha:
 
@@ -25,14 +28,14 @@ Süsteemi eesmärk on aidata enne otsust nähtavaks teha:
 - millised on argumendid eri pooltel
 - millised riskid võivad peituda hea kavatsuse taga
 - kas mõeldakse ainult tänasele või ka järgmistele põlvkondadele
-- millal on vaja laiemat kontrolli või eksperdihinnangut
+- millal on vaja laiemat kontrolli, eksperdihinnangut või avalikku vaidlust
 
 ## Kuidas kasutada
 
 Kui avad prototüübi brauseris, saad:
 
-1. sisestada ühiskondliku ettepaneku või probleemi
-2. valida valdkonna
+1. valida ühe kahest näidisteemast
+2. sisestada või muuta ühiskondlikku ettepanekut
 3. valida mõju suuruse
 4. märkida väärtusfiltrid
 5. koostada otsusekaardi
@@ -62,13 +65,11 @@ Järgmine versioon võiks ühendada prototüübi AI-ga, et süsteem koostaks ots
 ## Võimalikud järgmised sammud
 
 - lisada päris AI-põhine analüüs
-- lisada allikate ja eelduste kuvamine
+- lisada andmeallikate ja eelduste kuvamine
 - lisada avalik tagasiside või kommentaarikiht
 - lisada otsuste versiooniajalugu
-- testida prototüüpi päris ühiskondlike küsimustega
+- testida prototüüpi koolivõrgu ja ettevõtluse arenduse päris küsimustega
 
 ## Põhimõte
 
-Me ei ehita AI poliitikut.
-
-Me ehitame läbipaistvat demokraatlikku otsustusprotsessi, kus AI aitab müra vähendada ja mõtlemist nähtavaks teha.
+Me ehitame demokraatlikku otsustusprotsessi, kus kollektiivne sisend, andmed ja AI-põhine struktureerimine aitavad teha paremini põhjendatud otsuseid.

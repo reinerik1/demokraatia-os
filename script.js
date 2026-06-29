@@ -9,131 +9,116 @@ const coreProblem = document.querySelector("#coreProblem");
 const pros = document.querySelector("#pros");
 const cons = document.querySelector("#cons");
 const risks = document.querySelector("#risks");
+const dataNeeds = document.querySelector("#dataNeeds");
+const stakeholders = document.querySelector("#stakeholders");
+const conditions = document.querySelector("#conditions");
+const humanCheckpoints = document.querySelector("#humanCheckpoints");
 const nowImpact = document.querySelector("#nowImpact");
 const midImpact = document.querySelector("#midImpact");
 const longImpact = document.querySelector("#longImpact");
 const checks = document.querySelector("#checks");
 
+const examples = {
+  schoolNetwork: {
+    category: "Koolivõrk ja haridus",
+    impact: "Väga suur",
+    proposal: "Kuidas korraldada koolivõrku nii, et väiksemates piirkondades säiliks ligipääs heale haridusele, aga õpetajate puudus ja kvaliteedivahed ei süveneks?"
+  },
+  entrepreneurship: {
+    category: "Ettevõtluse arendus",
+    impact: "Suur",
+    proposal: "Kuidas toetada väiksemates piirkondades ettevõtlust nii, et tekiks päris töökohad ja kohalik lisandväärtus, mitte ainult toetustest sõltuv projektimajandus?"
+  }
+};
+
 const templates = {
-  "Regionaalpoliitika": {
+  "Koolivõrk ja haridus": {
+    title: "Koolivõrgu ja hariduse ettepanek",
+    core: "Koolivõrgu otsus ei ole ainult majade sulgemise või säilitamise küsimus. See puudutab laste ligipääsu heale õpetajale, kogukonna elujõudu, õpetajate töökoormust ja riigi võimet hoida kvaliteeti igas piirkonnas.",
     pros: [
-      "Võib tugevdada töökohtade loomist väljaspool suuri keskusi.",
-      "Aitab vähendada piirkondlikku ebavõrdsust.",
-      "Annab kohalikele inimestele rohkem võimalusi ettevõtlusega alustada."
+      "Võib parandada hariduse kvaliteeti, kui õpetajad, tugiteenused ja õppevahendid koonduvad tugevamatesse keskustesse.",
+      "Võib vähendada olukorda, kus laps saab kehvema hariduse ainult elukoha tõttu.",
+      "Võib teha õpetajate töö atraktiivsemaks, kui koormus ja tugisüsteemid on paremini korraldatud."
     ],
     cons: [
-      "Maksusoodustus võib vähendada riigi tulusid, kui mõju ei ole mõõdetav.",
-      "Soodustus võib minna ettevõtetele, kes oleksid tegutsenud ka ilma toetuseta.",
-      "Piirkondade piiritlemine võib tekitada vaidlusi ja ebaõiglust."
+      "Kooli kadumine võib nõrgestada kohaliku kogukonna tulevikutunnet.",
+      "Pikem koolitee võib mõjutada laste heaolu, huviharidust ja perede igapäevast elu.",
+      "Ainult kulupõhine otsus võib jätta kvaliteedi ja kogukondliku mõju liiga kitsalt mõõdetuks."
     ],
     risks: [
-      "Meetme kuritarvitamine fiktiivse asukoha kaudu.",
-      "Liiga keeruline bürokraatia väikestele ettevõtjatele.",
-      "Poliitiline surve jagada toetust nähtavuse, mitte mõju järgi."
+      "Otsus tehakse Exceli järgi, aga lapse ja pere tegelik elukorraldus jääb nähtamatuks.",
+      "Kvaliteedivõit ei realiseeru, kui õpetajate puudus jääb lahendamata.",
+      "Kogukonna usaldus langeb, kui otsus tundub ülalt alla surutud."
     ],
-    now: "Vajab kulude, sihtrühma ja kontrollimehhanismi täpsustamist.",
-    mid: "Edu korral võib paraneda kohalike töökohtade arv ja teenuste kättesaadavus.",
-    long: "Püsiv mõju sõltub sellest, kas piirkondades tekib iseseisev ettevõtluskeskkond, mitte ainult toetustest sõltuv mudel."
+    dataNeeds: [
+      "Õpetajate puuduse ja vanusstruktuuri andmed koolide kaupa.",
+      "Õpilaste liikumisaeg, transpordi kvaliteet ja mõju perepäevale.",
+      "Õpitulemused, tugiteenuste kättesaadavus ja õpetajate koormus.",
+      "Kooli roll kogukonna teenuste, huvitegevuse ja piirkonna atraktiivsuse hoidmisel."
+    ],
+    stakeholders: [
+      "Õpilased ja lapsevanemad.",
+      "Õpetajad, tugispetsialistid ja koolijuhid.",
+      "Kohalik omavalitsus ja kogukond.",
+      "Tulevased pered, kes otsustavad piirkonda jäämise või kolimise üle."
+    ],
+    conditions: [
+      "Muudatus on mõistlik ainult siis, kui kvaliteedivõit on selgelt kirjeldatud ja mõõdetav.",
+      "Transpordi, huvihariduse ja tugiteenuste lahendus peab olema enne otsust realistlik.",
+      "Kogukonnale peab jääma võimalus pakkuda alternatiivseid mudeleid, mitte ainult jah või ei valik."
+    ],
+    humanCheckpoints: [
+      "Laste heaolu ja kohaliku elu mõju peab hindama inimene, mitte ainult mudel.",
+      "Kui andmed näitavad kokkuhoidu, aga kogukondlik kahju on suur, peab otsus minema avalikku arutellu.",
+      "Lõplik otsustaja peab avalikult põhjendama, milliseid kompromisse ta aktsepteerib."
+    ],
+    now: "Kohe on vaja kaardistada tegelik probleem: kas põhimure on kvaliteet, raha, õpetajate puudus, hooned või laste arvu langus.",
+    mid: "5 aasta vaates tuleb hinnata, kas õpitulemused, õpetajate järelkasv ja perede rahulolu paranesid või halvenesid.",
+    long: "20 aasta vaates määrab mõju see, kas piirkond jääb elujõuliseks ja kas laps saab kvaliteetse hariduse sõltumata sünnikohast."
   },
-  "Haridus": {
+  "Ettevõtluse arendus": {
+    title: "Ettevõtluse arenduse ettepanek",
+    core: "Ettevõtluse arenduse eesmärk ei peaks olema lihtsalt toetuste jagamine, vaid kohaliku võimekuse kasvatamine: inimesed, oskused, kapital, taristu, turud ja aus riskijagamine.",
     pros: [
-      "Võib tõsta oskuste taset ja vähendada tulevast ebavõrdsust.",
-      "Haridusinvesteeringutel on tugev pikaajaline mõju.",
-      "Aitab kohanduda tööturu muutustega."
+      "Võib luua töökohti ja lisandväärtust piirkondades, kus majanduslik aktiivsus on nõrgem.",
+      "Võib anda kohalikele inimestele põhjuse jääda või tagasi tulla.",
+      "Võib kasvatada maksubaasi, kui toetus aitab ettevõttel päriselt iseseisvaks saada."
     ],
     cons: [
-      "Tulemused ilmnevad aeglaselt ja neid on raske ühe valimistsükli jooksul näidata.",
-      "Halvasti sihitud meede võib kasvatada halduskulu.",
-      "Õpetajate ja koolide koormus võib suureneda."
+      "Toetus võib minna projektidele, mis ei jää ilma avaliku rahata püsima.",
+      "Liiga üldine meede võib aidata neid, kes oleksid hakkama saanud ka ilma toetuseta.",
+      "Ettevõtluse arendus ei tööta, kui tööjõu, eluaseme, transpordi või interneti probleemid jäävad lahendamata."
     ],
     risks: [
-      "Reform tehakse ilma õpetajate tegeliku sisendita.",
-      "Mõõdikud muutuvad liiga kitsaks.",
-      "Nõrgemad piirkonnad ei saa piisavalt tuge rakendamiseks."
+      "Tekib toetussõltuvus, mitte päris konkurentsivõime.",
+      "Raha liigub tuttavatesse võrgustikesse, kui valikukriteeriumid pole läbipaistvad.",
+      "Mõõdetakse kulutatud toetust, mitte loodud väärtust."
     ],
-    now: "Vajab selget sihtrühma, mõõdikuid ja õpetajate kaasamist.",
-    mid: "Võib parandada õpitulemusi ja vähendada koolide vahelist lõhet.",
-    long: "Mõju võib avalduda tootlikkuses, tervises, sissetulekutes ja kodanikuaktiivsuses."
-  },
-  "Tervishoid": {
-    pros: [
-      "Võib parandada ligipääsu abile ja ennetada raskemaid haigusi.",
-      "Varasem sekkumine võib vähendada tulevasi kulusid.",
-      "Tugevdab inimeste turvatunnet."
+    dataNeeds: [
+      "Piirkonna tööjõu, oskuste ja palgataseme andmed.",
+      "Taristu seis: transport, internet, energia, ruumid ja eluasemed.",
+      "Ettevõtete ellujäämine 3 ja 5 aasta järel.",
+      "Mitu eurot lisandväärtust või maksutulu tekib iga avaliku euro kohta."
     ],
-    cons: [
-      "Nõuab püsivat rahastust, mitte ühekordset kampaaniat.",
-      "Tööjõupuudus võib piirata mõju.",
-      "Prioriteetide seadmine võib olla ühiskondlikult tundlik."
+    stakeholders: [
+      "Kohalikud ettevõtjad ja alustajad.",
+      "Töötajad, õppurid ja tagasi tulla soovivad inimesed.",
+      "Kohalik omavalitsus ja arenduskeskused.",
+      "Maksumaksja, kes kannab meetme kulu."
     ],
-    risks: [
-      "Teenuse lubamine ilma tegeliku võimekuseta.",
-      "Ebavõrdne ligipääs piirkondade vahel.",
-      "Andmekaitse ja usalduse probleemid."
+    conditions: [
+      "Toetus peab olema seotud mõõdetava tulemusega, mitte ainult kuludokumendiga.",
+      "Eelis peaks olema projektidel, mis kasvatavad kohalikku võimekust ka pärast toetuse lõppu.",
+      "Valikukriteeriumid, hindajad ja tulemused peavad olema avalikult jälgitavad."
     ],
-    now: "Vajab personali, raha ja ligipääsu tegeliku pudelikaela kaardistamist.",
-    mid: "Võib vähendada ravijärjekordi ja parandada ennetust.",
-    long: "Võib kasvatada tervena elatud aastaid ja vähendada sotsiaalkulusid."
-  },
-  "Maksud ja eelarve": {
-    pros: [
-      "Võib muuta süsteemi õiglasemaks või lihtsamaks.",
-      "Selge rahastus aitab vältida katteta lubadusi.",
-      "Eelarvemõju on võimalik läbipaistvalt modelleerida."
+    humanCheckpoints: [
+      "Kohalikud ettevõtjad peavad saama öelda, milline takistus päriselt pidurdab kasvu.",
+      "Kui toetus loob eelise ühele grupile, peab inimene hindama õiglust ja turumoonutust.",
+      "Lõplik otsustaja peab avalikult näitama, miks valitud meede on parem kui taristu, koolituse või maksureegli muutmine."
     ],
-    cons: [
-      "Maksumuutused võivad tekitada ootamatuid käitumismõjusid.",
-      "Lühiajaline populaarsus võib varjata pikaajalist kulu.",
-      "Mõju eri sissetulekugruppidele võib olla ebaühtlane."
-    ],
-    risks: [
-      "Tuluprognoosid on liiga optimistlikud.",
-      "Erandid muudavad süsteemi keeruliseks.",
-      "Koormus nihkub vaiksematele ühiskonnagruppidele."
-    ],
-    now: "Vajab realistlikku tulude-kulude hinnangut.",
-    mid: "Võib mõjutada investeeringuid, tarbimist ja riigi teenuste kvaliteeti.",
-    long: "Oluline on võlakoormus, maksubaasi püsimine ja põlvkondadevaheline õiglus."
-  },
-  "Keskkond": {
-    pros: [
-      "Võib vähendada tulevasi kahjusid ja terviseriske.",
-      "Annab ettevõtetele selgema suuna investeeringuteks.",
-      "Looduskeskkonna hoidmine toetab elukvaliteeti."
-    ],
-    cons: [
-      "Üleminekukulud võivad tabada osa inimesi või ettevõtteid järsult.",
-      "Mõju võib olla väike, kui meede on halvasti sihitud.",
-      "Liigne keerukus võib vähendada avalikku toetust."
-    ],
-    risks: [
-      "Kulud ja kasud jaotuvad ebaõiglaselt.",
-      "Rohepesu ilma mõõdetava mõjuta.",
-      "Piirkondlikud eripärad jäävad arvestamata."
-    ],
-    now: "Vajab mõju, kulude ja kompensatsioonide selget hindamist.",
-    mid: "Võib muuta investeeringuid ja tarbimiskäitumist.",
-    long: "Peamine küsimus on, kas meede vähendab päriselt keskkonnakahju ja tulevasi kulusid."
-  },
-  "Julgeolek": {
-    pros: [
-      "Võib tõsta kriisivalmidust ja ühiskonna vastupidavust.",
-      "Selge riskihinnang aitab ressursse paremini jagada.",
-      "Tugevdab inimeste valmisolekut ja usaldust."
-    ],
-    cons: [
-      "Võib piirata õigusi, kui kontrollid on nõrgad.",
-      "Kulud võivad tõrjuda teisi olulisi valdkondi.",
-      "Hirmupõhine kommunikatsioon võib moonutada arutelu."
-    ],
-    risks: [
-      "Erakorralised meetmed muutuvad püsivaks.",
-      "Läbipaistvus väheneb julgeoleku ettekäändel.",
-      "Avalikkuse usaldus langeb, kui põhjendused on varjatud."
-    ],
-    now: "Vajab ohu, vajalikkuse ja proportsionaalsuse kontrolli.",
-    mid: "Võib parandada valmisolekut, kui rakendamine on realistlik.",
-    long: "Peab hoidma tasakaalu turvalisuse, vabaduste ja demokraatliku kontrolli vahel."
+    now: "Kohe tuleb eristada, kas probleem on kapitali puudus, oskuste puudus, nõrk taristu, väike turg või ebakindel regulatsioon.",
+    mid: "5 aasta vaates peab nägema, kas tekkisid püsivad ettevõtted, töökohad ja oskused, mitte ainult ajutised projektid.",
+    long: "20 aasta vaates on eesmärk piirkonna majanduslik iseseisvus: vähem sõltuvust toetustest ja rohkem kohalikku lisandväärtust."
   }
 };
 
@@ -152,14 +137,18 @@ function updateCard() {
   const chosenFilters = [...document.querySelectorAll("input[type='checkbox']:checked")].map((item) => item.value);
   const needsReview = impact.value === "Suur" || impact.value === "Väga suur" || chosenFilters.length < 4;
 
-  resultTitle.textContent = `${selected} ettepanek`;
-  reviewStatus.textContent = needsReview ? "Vajab lisakontrolli" : "Esialgu piisav analüüs";
+  resultTitle.textContent = data.title;
+  reviewStatus.textContent = needsReview ? "Vajab kollektiivset kontrolli" : "Sobib esialgseks analüüsiks";
   reviewStatus.classList.toggle("ok", !needsReview);
-  coreProblem.textContent = `${proposal.value.trim()} Süsteemi ülesanne on eristada soovitud eesmärk, võimalikud kõrvalmõjud ja otsuse tingimused.`;
+  coreProblem.textContent = `${data.core} Sisend: ${proposal.value.trim()}`;
 
   fillList(pros, data.pros);
   fillList(cons, data.cons);
   fillList(risks, data.risks);
+  fillList(dataNeeds, data.dataNeeds);
+  fillList(stakeholders, data.stakeholders);
+  fillList(conditions, data.conditions);
+  fillList(humanCheckpoints, data.humanCheckpoints);
 
   nowImpact.textContent = data.now;
   midImpact.textContent = data.mid;
@@ -173,6 +162,17 @@ function updateCard() {
     checks.appendChild(div);
   });
 }
+
+document.querySelectorAll("[data-example]").forEach((button) => {
+  button.addEventListener("click", () => {
+    const selectedExample = examples[button.dataset.example];
+    proposal.value = selectedExample.proposal;
+    category.value = selectedExample.category;
+    impact.value = selectedExample.impact;
+    updateCard();
+    document.querySelector(".workspace").scrollIntoView({ behavior: "smooth", block: "start" });
+  });
+});
 
 form.addEventListener("submit", (event) => {
   event.preventDefault();
