@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="et">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Demokraatia OS prototüüp</title>
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <main class="shell">
+      <section class="intro">
+        <div>
+          <p class="eyebrow">Prototüüp v0.1</p>
+          <h1>Demokraatia operatsioonisüsteem</h1>
+          <p class="lead">Sisesta ühiskondlik ettepanek ja vaata, kuidas läbipaistev otsustusmudel võiks selle muuta argumentide, riskide ja pikaajaliste mõjude kaardiks.</p>
+        </div>
+        <div class="principles" aria-label="Põhimõtted">
+          <span>AI ei otsusta</span>
+          <span>Inimene vastutab</span>
+          <span>Protsess on nähtav</span>
+        </div>
+      </section>
+
+      <section class="workspace" aria-label="Otsuse analüüs">
+        <form class="input-panel" id="decisionForm">
+          <div class="field">
+            <label for="proposal">Ettepanek või probleem</label>
+            <textarea id="proposal" rows="8">Kas riik peaks toetama maapiirkondades väikeettevõtete loomist suurema maksusoodustusega?</textarea>
+          </div>
+
+          <div class="grid-two">
+            <div class="field">
+              <label for="category">Valdkond</label>
+              <select id="category">
+                <option>Regionaalpoliitika</option>
+                <option>Haridus</option>
+                <option>Tervishoid</option>
+                <option>Maksud ja eelarve</option>
+                <option>Keskkond</option>
+                <option>Julgeolek</option>
+              </select>
+            </div>
+
+            <div class="field">
+              <label for="impact">Mõju suurus</label>
+              <select id="impact">
+                <option>Keskmine</option>
+                <option>Suur</option>
+                <option>Väga suur</option>
+                <option>Väike</option>
+              </select>
+            </div>
+          </div>
+
+          <fieldset>
+            <legend>Otsuse väärtusfiltrid</legend>
+            <label><input type="checkbox" checked value="Pikaajaline vaade"> Pikaajaline vaade</label>
+            <label><input type="checkbox" checked value="Eelarveline jätkusuutlikkus"> Eelarveline jätkusuutlikkus</label>
+            <label><input type="checkbox" checked value="Regionaalne tasakaal"> Regionaalne tasakaal</label>
+            <label><input type="checkbox" checked value="Teaduspõhisus"> Teaduspõhisus</label>
+            <label><input type="checkbox" checked value="Tulevaste põlvkondade mõju"> Tulevaste põlvkondade mõju</label>
+          </fieldset>
+
+          <button type="submit">Koosta otsusekaart</button>
+        </form>
+
+        <section class="result-panel" aria-live="polite">
+          <div class="result-head">
+            <div>
+              <p class="eyebrow">Otsusekaart</p>
+              <h2 id="resultTitle">Regionaalpoliitika ettepanek</h2>
+            </div>
+            <span class="status" id="reviewStatus">Vajab lisakontrolli</span>
+          </div>
+
+          <div class="cards">
+            <article>
+              <h3>Probleemi tuum</h3>
+              <p id="coreProblem">Maapiirkondade ettevõtlus võib vajada sihitud tuge, kuid maksusoodustus peab olema mõõdetav, õiglane ja eelarveliselt põhjendatud.</p>
+            </article>
+            <article>
+              <h3>Pooltargumendid</h3>
+              <ul id="pros"></ul>
+            </article>
+            <article>
+              <h3>Vastuargumendid</h3>
+              <ul id="cons"></ul>
+            </article>
+            <article>
+              <h3>Riskid</h3>
+              <ul id="risks"></ul>
+            </article>
+          </div>
+
+          <div class="timeline">
+            <h3>Mõju ajas</h3>
+            <div class="time-grid">
+              <div><strong>Kohe</strong><p id="nowImpact"></p></div>
+              <div><strong>5 aastat</strong><p id="midImpact"></p></div>
+              <div><strong>20 aastat</strong><p id="longImpact"></p></div>
+            </div>
+          </div>
+
+          <div class="checklist">
+            <h3>Läbipaistvuse kontroll</h3>
+            <div id="checks"></div>
+          </div>
+        </section>
+      </section>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>
