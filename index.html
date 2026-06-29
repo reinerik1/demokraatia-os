@@ -10,14 +10,36 @@
     <main class="shell">
       <section class="intro">
         <div>
-          <p class="eyebrow">Prototüüp v0.1</p>
+          <p class="eyebrow">Prototüüp v0.2</p>
           <h1>Demokraatia operatsioonisüsteem</h1>
-          <p class="lead">Sisesta ühiskondlik ettepanek ja vaata, kuidas läbipaistev otsustusmudel võiks selle muuta argumentide, riskide ja pikaajaliste mõjude kaardiks.</p>
+          <p class="lead">Kollektiivne otsustusmehhanism, kus inimeste sisend, avalikud andmed ja AI-põhine struktureerimine aitavad vähendada ego, omakasu ja loosungipõhist poliitikat.</p>
         </div>
         <div class="principles" aria-label="Põhimõtted">
-          <span>AI ei otsusta</span>
-          <span>Inimene vastutab</span>
-          <span>Protsess on nähtav</span>
+          <span>Kollektiivne sisend</span>
+          <span>AI struktureerib</span>
+          <span>Vastutus jääb nähtavaks</span>
+        </div>
+      </section>
+
+      <section class="explain" aria-label="Lühiselgitus">
+        <div>
+          <h2>Mida see proovib lahendada?</h2>
+          <p>Poliitilised otsused sünnivad tihti isikliku ambitsiooni, erakondliku surve, hirmu või lühiajalise kasu sees. See prototüüp katsetab mudelit, kus otsus läbib enne seisukohaks muutumist ühise kontrolli: mis on probleem, millised on andmed, keda see mõjutab, mis riskid peituvad ja millistel tingimustel oleks otsus mõistlik.</p>
+        </div>
+        <div>
+          <h2>AI roll</h2>
+          <p>AI ei ole siin kõrvaltvaataja ega diktaator, vaid tööriist, mis aitab suure hulga sisendi arusaadavaks teha: koondab argumendid, otsib puuduvaid andmepunkte, toob välja nõrgad kohad ja sunnib otsust vaatama ka 5-20 aasta vaates.</p>
+        </div>
+      </section>
+
+      <section class="examples" aria-label="Näited">
+        <div>
+          <p class="eyebrow">Näidisküsimused</p>
+          <h2>Alusta ühest põhimurest</h2>
+        </div>
+        <div class="example-actions">
+          <button type="button" class="ghost-button" data-example="schoolNetwork">Koolivõrk ja kvaliteet</button>
+          <button type="button" class="ghost-button" data-example="entrepreneurship">Ettevõtluse arendus</button>
         </div>
       </section>
 
@@ -25,19 +47,15 @@
         <form class="input-panel" id="decisionForm">
           <div class="field">
             <label for="proposal">Ettepanek või probleem</label>
-            <textarea id="proposal" rows="8">Kas riik peaks toetama maapiirkondades väikeettevõtete loomist suurema maksusoodustusega?</textarea>
+            <textarea id="proposal" rows="8">Kuidas korraldada koolivõrku nii, et väiksemates piirkondades säiliks ligipääs heale haridusele, aga õpetajate puudus ja kvaliteedivahed ei süveneks?</textarea>
           </div>
 
           <div class="grid-two">
             <div class="field">
               <label for="category">Valdkond</label>
               <select id="category">
-                <option>Regionaalpoliitika</option>
-                <option>Haridus</option>
-                <option>Tervishoid</option>
-                <option>Maksud ja eelarve</option>
-                <option>Keskkond</option>
-                <option>Julgeolek</option>
+                <option>Koolivõrk ja haridus</option>
+                <option>Ettevõtluse arendus</option>
               </select>
             </div>
 
@@ -58,7 +76,7 @@
             <label><input type="checkbox" checked value="Eelarveline jätkusuutlikkus"> Eelarveline jätkusuutlikkus</label>
             <label><input type="checkbox" checked value="Regionaalne tasakaal"> Regionaalne tasakaal</label>
             <label><input type="checkbox" checked value="Teaduspõhisus"> Teaduspõhisus</label>
-            <label><input type="checkbox" checked value="Tulevaste põlvkondade mõju"> Tulevaste põlvkondade mõju</label>
+            <label><input type="checkbox" checked value="Kohaliku kogukonna sisend"> Kohaliku kogukonna sisend</label>
           </fieldset>
 
           <button type="submit">Koosta otsusekaart</button>
@@ -68,27 +86,43 @@
           <div class="result-head">
             <div>
               <p class="eyebrow">Otsusekaart</p>
-              <h2 id="resultTitle">Regionaalpoliitika ettepanek</h2>
+              <h2 id="resultTitle">Koolivõrgu ja hariduse ettepanek</h2>
             </div>
-            <span class="status" id="reviewStatus">Vajab lisakontrolli</span>
+            <span class="status" id="reviewStatus">Vajab kollektiivset kontrolli</span>
           </div>
 
           <div class="cards">
             <article>
               <h3>Probleemi tuum</h3>
-              <p id="coreProblem">Maapiirkondade ettevõtlus võib vajada sihitud tuge, kuid maksusoodustus peab olema mõõdetav, õiglane ja eelarveliselt põhjendatud.</p>
+              <p id="coreProblem">Koolivõrgu muutmine peab korraga hoidma hariduse kvaliteeti, piirkondlikku elujõudu ja laste tegelikku ligipääsu heale õpikeskkonnale.</p>
             </article>
             <article>
-              <h3>Pooltargumendid</h3>
+              <h3>Toetavad argumendid</h3>
               <ul id="pros"></ul>
             </article>
             <article>
-              <h3>Vastuargumendid</h3>
+              <h3>Vastuväited</h3>
               <ul id="cons"></ul>
             </article>
             <article>
               <h3>Riskid</h3>
               <ul id="risks"></ul>
+            </article>
+            <article>
+              <h3>Vajalikud andmed</h3>
+              <ul id="dataNeeds"></ul>
+            </article>
+            <article>
+              <h3>Mõjutatud osapooled</h3>
+              <ul id="stakeholders"></ul>
+            </article>
+            <article>
+              <h3>Millistel tingimustel mõistlik?</h3>
+              <ul id="conditions"></ul>
+            </article>
+            <article>
+              <h3>Kus peab inimene sekkuma?</h3>
+              <ul id="humanCheckpoints"></ul>
             </article>
           </div>
 
@@ -104,6 +138,11 @@
           <div class="checklist">
             <h3>Läbipaistvuse kontroll</h3>
             <div id="checks"></div>
+          </div>
+
+          <div class="operating-model">
+            <h3>Otsustusmehhanismi põhimõte</h3>
+            <p>Inimesed annavad sisendi, AI korrastab ja täiendab analüüsi, avalikkus näeb eeldusi ning lõplik poliitiline vastutus jääb inimesele või institutsioonile. Mõte ei ole inimest eemaldada, vaid vähendada ego, omakasu ja juhusliku surve mõju otsusele.</p>
           </div>
         </section>
       </section>
